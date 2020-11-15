@@ -1,0 +1,26 @@
+{
+  "name": "CodeNames",
+  "version": "1.0.0",
+  "description": "Create a group game called codenames.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lastHokage/CodeNames.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lastHokage/CodeNames/issues"
+  },
+  "homepage": "https://github.com/lastHokage/CodeNames#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "uuid": "^8.3.1"
+  }
+}
