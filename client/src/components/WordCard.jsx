@@ -28,6 +28,22 @@ const words = [
   "discovery",
 ];
 
-const WordCard = () => words.map((word) => <div className="word-card">{word}</div>);
+const WordCard = ({ red, blue, yellow }) => {
+  return words.map((word, index) => (
+    <div
+      className={`word-card ${
+        red.includes(index)
+          ? "red"
+          : blue.includes(index)
+          ? `blue`
+          : yellow.includes(index)
+          ? "yellow"
+          : "black"
+      }`}
+    >
+      {word}
+    </div>
+  ));
+};
 
 export default WordCard;
