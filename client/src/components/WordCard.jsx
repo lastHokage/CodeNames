@@ -1,34 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// let words = [
-//   "crate",
-//   "leg",
-//   "rabbit",
-//   "daffy",
-//   "connection",
-//   "premium",
-//   "spot",
-//   "enormous",
-//   "shop",
-//   "many",
-//   "irritating",
-//   "hard-to-find",
-//   "space",
-//   "open",
-//   "sip",
-//   "quarter",
-//   "muddle",
-//   "huge",
-//   "hour",
-//   "fence",
-//   "roof",
-//   "mean",
-//   "letters",
-//   "flow",
-//   "discovery",
-// ];
-
 const WordCard = ({ red, blue, yellow }) => {
   const [words, setWords] = useState([]);
   useEffect(() => {
