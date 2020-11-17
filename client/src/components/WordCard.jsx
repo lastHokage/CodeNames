@@ -1,44 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// let words = [
-//   "crate",
-//   "leg",
-//   "rabbit",
-//   "daffy",
-//   "connection",
-//   "premium",
-//   "spot",
-//   "enormous",
-//   "shop",
-//   "many",
-//   "irritating",
-//   "hard-to-find",
-//   "space",
-//   "open",
-//   "sip",
-//   "quarter",
-//   "muddle",
-//   "huge",
-//   "hour",
-//   "fence",
-//   "roof",
-//   "mean",
-//   "letters",
-//   "flow",
-//   "discovery",
-// ];
-
 const WordCard = ({ red, blue, yellow }) => {
-  const [words, setWords] = useState();
+  const [words, setWords] = useState([]);
   useEffect(() => {
     const fetchWords = async () => {
-      const result = await axios("https://www.randomlists.com/data/words.json");
-      console.log(result);
+      const result = await axios("/words");
+      setWords(result.data);
     };
     fetchWords();
   }, []);
-  console.log(words);
   return words.map((word, index) => (
     <div
       className={`word-card ${
@@ -50,8 +21,9 @@ const WordCard = ({ red, blue, yellow }) => {
           ? "yellow"
           : "black"
       }`}
+      key={word.id}
     >
-      {word}
+      {word.word}
     </div>
   ));
 };
