@@ -1,6 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { showWrods } = require("../controller/wordController");
+const {
+  createRandomeRoom,
+  joinRoom,
+  getAll,
+} = require("../controller/gameController");
 
 const app = express();
 
@@ -12,5 +17,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/words", showWrods);
+app.get("/new-game", createRandomeRoom);
+app.post("/join-game/:id", joinRoom);
+app.get("/all", getAll);
 
 module.exports = app;
