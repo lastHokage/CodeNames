@@ -13,7 +13,6 @@ exports.createRandomeRoom = (req, res) => {
   );
   const roomId = randomString();
   gameRooms.push({ roomId, words: selectedWords });
-  console.log({ gameRooms });
   res.status(200).json({ roomId });
 };
 
