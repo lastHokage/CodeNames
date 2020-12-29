@@ -5,6 +5,7 @@ const {
   createRandomeRoom,
   joinRoom,
   getAll,
+  getRoomData,
 } = require("../controller/gameController");
 
 const app = express();
@@ -17,7 +18,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/words", showWrods);
-app.get("/new-game", createRandomeRoom);
+app.post("/new-game", createRandomeRoom);
+app.get("/new-game/:id", getRoomData);
 app.post("/join-game/:id", joinRoom);
 app.get("/all", getAll);
 
