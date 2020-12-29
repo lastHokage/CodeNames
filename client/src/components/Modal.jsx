@@ -1,5 +1,12 @@
-import Input from "./Input"
-const Modal = ({ getInput, gameRoom, getGameRoom, joinGameRoom }) => (
+import Input from "./Input";
+const Modal = ({
+  getInput,
+  gameRoom,
+  getGameRoom,
+  joinGameRoom,
+  playerName,
+  setPlayerName,
+}) => (
   <div className="fixed z-10 inset-0 overflow-y-auto">
     <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
       <div className="fixed inset-0 transition-opacity" aria-hidden="true">
@@ -27,7 +34,16 @@ const Modal = ({ getInput, gameRoom, getGameRoom, joinGameRoom }) => (
                 on the create a game room
               </p>
               <form>
-                <Input value = {gameRoom} setValue={getInput}/>
+                <Input
+                  value={playerName}
+                  setValue={setPlayerName}
+                  placeholder="enter your name"
+                />
+                <Input
+                  value={gameRoom}
+                  setValue={getInput}
+                  placeholder="enter a room code if you like to join a game"
+                />
               </form>
             </div>
           </div>

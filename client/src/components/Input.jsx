@@ -1,12 +1,15 @@
-const Input = ({ value, setValue }) => {
+const Input = ({ value, setValue, placeholder }) => {
   return (
-    <div className="shadow sm:rounded-md sm:overflow-hidden">
+    <div className="py-3">
       <input
         name="gameRoom"
+        type="text"
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder="enter a room code"
-        className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+        placeholder={placeholder}
+        className="form-control "
       />
     </div>
   );
