@@ -38,6 +38,7 @@ io.on("connection", (socket) => {
     console.log(room);
     io.in(roomId).emit(UPDATE_ROOM, room);
     io.in(roomId).emit(UPDATE_SPYMASTER, room);
+    io.in(roomId).emit(SPAY_MASTER, room);
   });
   socket.on(UPDATE_SPYMASTER, (data) => {
     const { red, blue } = data.body;
