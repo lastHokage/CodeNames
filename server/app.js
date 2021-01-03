@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 app.get("/words", showWrods);
 app.post("/new-game", createRandomeRoom);
 app.get("/new-game/:id", getRoomData);
-app.post("/join-game/:id", joinRoom);
+// app.post("/join-game/:id", joinRoom);
 app.get("/all", getAll);
 
 module.exports = app;
