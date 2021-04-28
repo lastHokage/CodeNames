@@ -3,7 +3,14 @@ version : 2.1
 orbs: 
   heroku: circleci/heroku@0.0.10
 
+commands:
+  install-modules:
+    steps:
+      - checkout
+      - run: npm ci
+
 workflows:
   heroku_deploy:
     jobs:
+      - install-modules
       - heroku/deploy-via-git
